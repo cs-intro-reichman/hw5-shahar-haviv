@@ -10,7 +10,7 @@ public class MyString {
         // System.out.println(countChar(hello, 'l'));
         // System.out.println(countChar(hello, 'z'));
         // System.out.println(spacedString(hello));
-        System.out.println(subsetOf("sap", "space"));
+        System.out.println(subsetOf("runi", "running"));
         System.out.println(subsetOf("pass", "space"));
         // System.out.println( spacedString("silent"));
         // System.out.println(spacedString(hello));
