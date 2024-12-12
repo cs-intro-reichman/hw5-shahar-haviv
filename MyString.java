@@ -5,14 +5,14 @@ import java.util.Random;
  */
 public class MyString {
     public static void main(String args[]) {
-        String hello = "hello";
-        System.out.println(countChar(hello, 'h'));
-        System.out.println(countChar(hello, 'l'));
-        System.out.println(countChar(hello, 'z'));
-        System.out.println(spacedString(hello));
+        // String hello = "hello";
+        // System.out.println(countChar(hello, 'h'));
+        // System.out.println(countChar(hello, 'l'));
+        // System.out.println(countChar(hello, 'z'));
+        // System.out.println(spacedString(hello));
         System.out.println(subsetOf("sap", "space"));
         System.out.println(subsetOf("pass", "space"));
-        System.out.println( spacedString("silent"));
+        // System.out.println( spacedString("silent"));
         // System.out.println(spacedString(hello));
         //// Put your other tests here.
     }
@@ -49,24 +49,14 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-        int counter = 0;
-        switch (str1) {
-            case "":
-                return true;
-            default:
-                if (str1.length() > str2.length()) {
-                    return false;
-                }
-        }
-        for (int i = 0; i < str2.length(); i++) {
-            if (countChar(str2, str2.charAt(i)) >= countChar(str1, str2.charAt(i))) {
-                counter = counter++;
+        for (char c : str1.toCharArray()) {
+            if (str2.indexOf(c) == -1) {
+                return false; // If a character from str2 is not found in str1
+            } else {
+                str2 = str2.replace(String.valueOf(c), "");
             }
         }
-        if (counter == str2.length()) {
-            return true;
-        }
-        return false;
+        return true; // All characters of str2 are found in str1
     }
 
     /**
